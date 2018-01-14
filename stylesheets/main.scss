@@ -1,3 +1,25 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: tan;
+
+@import 'partials/mixins';
+
 body {
-	background-color: red;
+	background-color:red;
+	  @include screen(med-small) {
+	    // width: 60%;
+	    background-color: pink;
+	  }
+	  @include screen(med) {
+		background-color: blue;
+	  }
+}
+
+li {
+	color:yellow;
+	@include screen(med-small){
+		color:red;
+	}
+	@include screen(med){
+		color:black;
+	}	
 }
