@@ -1,5 +1,11 @@
+ul {
+  padding: 0;
+  margin: 0; }
+
 li {
-  color: red; }
+  color: red;
+  list-style-type: none;
+  padding: 20px 0; }
 
 .cf {
   *zoom: 1; }
@@ -10,6 +16,10 @@ li {
     /* 2 */ }
   .cf:after {
     clear: both; }
+
+.container {
+  display: flex;
+  /* or inline-flex */ }
 
 /**
  * For modern browsers

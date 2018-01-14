@@ -14,12 +14,22 @@ body {
 	  }
 }
 
+ul {
+	padding:0; 
+	margin:0;
+}
 li {
 	color:red;
+	list-style-type:none;
+	padding: 20px 0;
 }
 
 .cf {
 	@include clearfix;
+}
+
+.container {
+  display: flex; /* or inline-flex */
 }
 
 
