@@ -6,7 +6,7 @@ $main-font:'Poppins', sans-serif;
 $sub-font:'Roboto', sans-serif;
 
 // Colors
-$primary-color: #FFBF12;
+$primary-color: #00C5BC;
 $dark-color: #383838;
 
 // Tag styles
@@ -67,7 +67,7 @@ li {
 nav{
 	li {
 		list-style-type:none;
-		border-bottom: 2px solid #fff;
+		border-bottom: 1px solid #fff;
 		background-color: $primary-color;
 		letter-spacing:1px;
 	}
@@ -90,13 +90,40 @@ input {
 	height: 50px;
 	margin-bottom: 10px;
 	padding-left: 10px;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;	
+	&:focus {
+		 border:2px solid $primary-color;
+    -webkit-box-shadow: 0 0 4px $primary-color;
+    box-shadow: 0 0 4px $primary-color;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+	}
 }
+
 textarea {
 	border: 2px solid $primary-color; 
 	width: 100%; 
 	height:100px;
 	padding: 10px;
 	margin-bottom: 10px;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;		
+	&:focus {
+		 border:2px solid $primary-color;
+    -webkit-box-shadow: 0 0 4px $primary-color;
+    box-shadow: 0 0 4px $primary-color;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+	}	
 }
 button {
 	@extend .btn-a;
@@ -146,39 +173,137 @@ button {
 
 #home-sec {
 	background-color:$primary-color;
+	padding-bottom:40px;
 }
-
+#home {
+	padding:100px 0;
+}
 .about-sub-sec {
-	margin-bottom:20px;
+	margin-bottom:60px;
 }
 .container {
   display: flex; /* or inline-flex */
   flex-direction:column;
+  	@include screen(med) {
+	  display: flex; 
+	  flex-direction:row;  		
+  	}
 }
 
 .item-1 {
-	order:1
+	order:1;
+	@include screen(med) {
+		order:2;
+	}
 }
 
 .item-2 {
-	order:2
+	order:2;
+	@include screen(med) {
+		order:1;
+		width:70%;
+	}
 }
+.item-3 {
+	order:1;
+	@include screen(med) {
+		order:1;
+	}
+}
+.item-4 {
+	order:2;
+	@include screen(med) {
+		order:2;
+		width:70%;
+	}
+}
+.f-cont {
+  display: flex; /* or inline-flex */
+  flex-direction:column;
+  	@include screen(med) {
+	  display: flex; 
+	  flex-direction:row;  		
+  	}
+}
+.f-1 {
+	order:1;
+	@include screen(med) {
+		order:2;
+	}	
+}
+
+  .flex-grid,
+  .flex-grid-thirds,
+  .flex-grid-half {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+
+@include screen(med) {
+	.flex-grid {
+	  display: flex;
+	}
+	.flex-grid .col {
+	  flex: 1;
+	}
+	.flex-grid-thirds {
+	  display: flex;
+	  justify-content: space-between;
+	  margin-bottom:20px;
+	}
+	.flex-grid-thirds .col {
+	  width: 32%;
+	  text-align:center;
+	}	
+	#home .item-1 .prod-img {
+		max-width: 450px;
+	}
+}
+.flex-grid-half {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:20px;
+  	.col {
+ 	  width: 49%;
+	  text-align:center; 		
+  	}
+}
+
+
 .theme-width{
 	padding:20px;
+	@include screen(med) {
+		width: 70%; 
+		margin:0 auto;
+		padding: 50px 0;
+	}
 }
+
 .section-heading {
 	background-color:$dark-color;
 	color:#fff;
 	display:block;
-	padding:20px 20px;
+	padding:15px 20px;
 	font-weight:300;
 	text-transform:uppercase;
 	margin:50px 0;
+	font-size:1.5rem;
 	// width:100%;
 	text-align:center;
+	@include screen(med) {
+		width:40%;
+		margin:0 auto;
+		margin-bottom:50px;
+	}
 }
-#team-sec {
-
+#about {
+	padding-bottom:0;
+}
+#features {
+	padding-top:0;
 }
 #team-sec h3 {
 	margin-bottom:10px;
@@ -195,17 +320,25 @@ button {
 	padding: 50px 0;
 	background-color:$primary-color;
 	text-align:center;
+	@include screen(med) {
+		div {
+			width:70%;
+			margin:0 auto;
+		}
+
+	}
 }
 .prod-img {
-	width:350px;
+	max-width:350px;
 	display:block;
-	width:100%;
+	// width:100%;
 }
 .feat-img {
 	width:50px;
 }
 .feat-sub-sec {
 	margin: 30px 0;
+	padding-top:20px;
 }
 .team-img {
 	width:150px;
@@ -233,7 +366,7 @@ button {
 	}
 }
 
-
+// 
 
 body {
 	// background-color:red;
