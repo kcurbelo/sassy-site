@@ -34,6 +34,17 @@ $breakpoint-larg: 1175px;
   }
 }
 
+@mixin clearfix {
+  &:before, &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */    
+  }
+  &:after {
+    clear: both;
+  }
+  *zoom: 1;
+}
+
 // Original ========================
 // $breakpoint-small: 600px;
 // $breakpoint-med-small: 960px;
@@ -69,17 +80,5 @@ $breakpoint-larg: 1175px;
 //     @content;
 //   }
 // }
-
-@mixin clearfix {
-  &:before, &:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */    
-  }
-  &:after {
-    clear: both;
-  }
-  *zoom: 1;
-}
-
 
 
