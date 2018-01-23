@@ -1,15 +1,29 @@
-// Mixins 
+// ==============================================
+// Mixins
+// ==============================================
 @import 'partials/mixins';
 
+
+
+// ============================================
 // Fonts
+// ============================================
 $main-font:'Poppins', sans-serif;
 $sub-font:'Roboto', sans-serif;
 
+
+
+// =============================================
 // Colors
+// =============================================
 $primary-color: #00C5BC;
 $dark-color: #383838;
 
-// Tag styles
+
+
+// ==============================================
+// Tag styles 
+// ==============================================
 *, *:before, *:after {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -78,8 +92,6 @@ nav{
 		padding: 20px 20px;
 	}
 }
-
-
 img {
 
 }
@@ -104,7 +116,6 @@ input {
     transition: all .25s ease-in-out;
 	}
 }
-
 textarea {
 	border: 2px solid $primary-color; 
 	width: 100%; 
@@ -131,7 +142,10 @@ button {
 }
 
 
+
+// ==============================================
 // Buttons
+// ==============================================
 .btn-a {
 	display:inline-block;
 	padding:15px;
@@ -151,12 +165,21 @@ button {
 	@extend .btn-a;
 	background-color:$dark-color;
 }
-// misc
+
+
+
+// ===========================================
+// Misc
+// ===========================================
 .cf {
 	@include clearfix;
 }
 
+
+
+// =============================================
 // Styles
+// =============================================
 #logo {
 	height:40px;
 	width:auto;
@@ -175,28 +198,31 @@ button {
 	background-color:$primary-color;
 	padding-bottom:40px;
 }
+
+
+
+//  ===================================================
+// Home section
+//  ===================================================
 #home {
 	padding:100px 0;
 }
+
+
+
+//  ====================================================
+// About section
+//  ====================================================
 .about-sub-sec {
 	margin-bottom:60px;
 }
-.container {
-  display: flex; /* or inline-flex */
-  flex-direction:column;
-  	@include screen(med) {
-	  display: flex; 
-	  flex-direction:row;  		
-  	}
-}
-
+// Order for collapse
 .item-1 {
 	order:1;
 	@include screen(med) {
 		order:2;
 	}
 }
-
 .item-2 {
 	order:2;
 	@include screen(med) {
@@ -215,6 +241,123 @@ button {
 	@include screen(med) {
 		order:2;
 		width:70%;
+	}
+}
+#about {
+	padding-bottom:0;
+}
+.prod-img {
+	max-width:350px;
+	display:block;
+	// width:100%;
+}
+
+// ===================================================
+// Features section
+// ===================================================
+#features {
+	padding-top:0;
+}
+.feat-img {
+	width:50px;
+}
+.feat-sub-sec {
+	margin: 30px 0;
+	padding-top:20px;
+}
+
+// ===================================================
+// Our team section
+// ===================================================
+#team-sec h3 {
+	margin-bottom:10px;
+	color:#fff;
+}
+#team-sec p {
+	margin-top:0;
+	color:#fff;
+}
+.team-sub-sec {
+	margin:30px 0;
+}
+#team-sec-main {
+	padding: 50px 0;
+	background-color:$primary-color;
+	text-align:center;
+	@include screen(med) {
+		div {
+			width:90%;
+			margin:0 auto;
+		}
+
+	}
+}
+.team-img {
+	width:150px;
+	margin:0 auto;
+	border-radius:100%;
+	border:3px solid #fff;
+}
+
+// ===================================================
+// Pricing section
+// ===================================================
+.pricing-cont {
+	border:2px solid $primary-color;
+	padding:20px;
+	margin-bottom:20px;
+	li {
+		padding:10px 20px;
+		border-bottom: 2px solid $primary-color;
+	}
+}
+.pricing-price {
+	font-size: 2rem;
+	margin-bottom:10px;
+}
+.pricing-active {
+	border:2px solid $dark-color;
+	li {
+		border-bottom: 2px solid $dark-color;
+	}
+}
+
+
+
+// ===================================================
+// All sections
+// ===================================================
+.container {
+  display: flex; 
+  flex-direction:column;
+  	@include screen(med) {
+	  display: flex; 
+	  flex-direction:row;  		
+  	}
+}
+.theme-width{
+	padding:20px;
+	@include screen(med) {
+		width: 70%; 
+		margin:0 auto;
+		padding: 50px 0;
+	}
+}
+.section-heading {
+	background-color:$dark-color;
+	color:#fff;
+	display:block;
+	padding:15px 20px;
+	font-weight:300;
+	text-transform:uppercase;
+	margin:50px 0;
+	font-size:1.5rem;
+	// width:100%;
+	text-align:center;
+	@include screen(med) {
+		width:40%;
+		margin:0 auto;
+		margin-bottom:50px;
 	}
 }
 .f-cont {
@@ -253,98 +396,14 @@ button {
 }
 
 
-.theme-width{
-	padding:20px;
-	@include screen(med) {
-		width: 70%; 
-		margin:0 auto;
-		padding: 50px 0;
-	}
-}
 
-.section-heading {
-	background-color:$dark-color;
-	color:#fff;
-	display:block;
-	padding:15px 20px;
-	font-weight:300;
-	text-transform:uppercase;
-	margin:50px 0;
-	font-size:1.5rem;
-	// width:100%;
-	text-align:center;
-	@include screen(med) {
-		width:40%;
-		margin:0 auto;
-		margin-bottom:50px;
-	}
-}
-#about {
-	padding-bottom:0;
-}
-#features {
-	padding-top:0;
-}
-#team-sec h3 {
-	margin-bottom:10px;
-	color:#fff;
-}
-#team-sec p {
-	margin-top:0;
-	color:#fff;
-}
-.team-sub-sec {
-	margin:30px 0;
-}
-#team-sec-main {
-	padding: 50px 0;
-	background-color:$primary-color;
-	text-align:center;
-	@include screen(med) {
-		div {
-			width:90%;
-			margin:0 auto;
-		}
 
-	}
-}
-.prod-img {
-	max-width:350px;
-	display:block;
-	// width:100%;
-}
-.feat-img {
-	width:50px;
-}
-.feat-sub-sec {
-	margin: 30px 0;
-	padding-top:20px;
-}
-.team-img {
-	width:150px;
-	margin:0 auto;
-	border-radius:100%;
-	border:3px solid #fff;
-}
-.pricing-cont {
-	border:2px solid $primary-color;
-	padding:20px;
-	margin-bottom:20px;
-	li {
-		padding:10px 20px;
-		border-bottom: 2px solid $primary-color;
-	}
-}
-.pricing-price {
-	font-size: 2rem;
-	margin-bottom:10px;
-}
-.pricing-active {
-	border:2px solid $dark-color;
-	li {
-		border-bottom: 2px solid $dark-color;
-	}
-}
+
+
+
+
+
+
 
 @include screen(med) {
 	.flex-grid {
