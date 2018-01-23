@@ -208,24 +208,6 @@ button {
     width: 100%;
     margin: 0 0 10px 0; }
 
-@media screen and (min-width: 960px) {
-  .flex-grid {
-    display: flex; }
-
-  .flex-grid .col {
-    flex: 1; }
-
-  .flex-grid-thirds {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px; }
-
-  .flex-grid-thirds .col {
-    width: 32%;
-    text-align: center; }
-
-  #home .item-1 .prod-img {
-    max-width: 450px; } }
 .flex-grid-half {
   display: flex;
   justify-content: space-between;
@@ -281,7 +263,7 @@ button {
   text-align: center; }
   @media screen and (min-width: 960px) {
     #team-sec-main div {
-      width: 70%;
+      width: 90%;
       margin: 0 auto; } }
 
 .prod-img {
@@ -317,5 +299,24 @@ button {
   border: 2px solid #383838; }
   .pricing-active li {
     border-bottom: 2px solid #383838; }
+
+@media screen and (min-width: 960px) {
+  .flex-grid {
+    display: flex; }
+
+  .flex-grid .col {
+    flex: 1; }
+
+  .flex-grid-thirds {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; }
+
+  .flex-grid-thirds .col {
+    width: 32%;
+    text-align: center; }
+
+  #home .item-1 .prod-img {
+    max-width: 450px; } }
 
 /*# sourceMappingURL=main.css.map */
